@@ -1,0 +1,1 @@
+Сборка и запуск с помощью https://github.com/Shelkopryad/inffra
