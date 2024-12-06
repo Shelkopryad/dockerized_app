@@ -29,7 +29,7 @@ RUN curl -sSL https://get.rvm.io | bash -s stable
 WORKDIR /app
 ADD https://github.com/Shelkopryad/inffra/commits /dev/null
 
-COPY Gemfile Gemfile.lock /app/
+COPY Gemfile /app/
 
 RUN source /usr/local/rvm/scripts/rvm && \
     rvm install $RUBY_VERSION && \
@@ -38,6 +38,6 @@ RUN source /usr/local/rvm/scripts/rvm && \
 RUN source /usr/local/rvm/scripts/rvm && gem install bundler -v $BUNDLER_VERSION --no-document
 
 COPY . /app
-RUN bin/bundle config build.ffi -- --with-cflags=-Wno-implicit-function-declaration && bin/bundle install
+RUN bin/bundle config build.ffi -- --with-cflags=-Wno-implicit-function-declaration && bin/bundle config set force_ruby_platform true && bin/bundle install
 
 EXPOSE 3000
