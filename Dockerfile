@@ -27,7 +27,6 @@ RUN gpg --keyserver-options auto-key-retrieve --keyserver keyserver.ubuntu.com -
 RUN curl -sSL https://get.rvm.io | bash -s stable
 
 WORKDIR /app
-ADD https://github.com/Shelkopryad/inffra/commits /dev/null
 
 COPY Gemfile /app/
 
