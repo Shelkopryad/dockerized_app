@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
-ARG RUBY_VERSION=2.7.4
+ARG RUBY_VERSION=3.3.1
 ARG RUBY_GEMSET=test_rails_dockerized
-ARG BUNDLER_VERSION=2.4.22
+ARG BUNDLER_VERSION=2.6.3
 
 RUN apt-get clean && apt-get update -qq && apt-get install -yq --no-install-recommends  \
     software-properties-common \
